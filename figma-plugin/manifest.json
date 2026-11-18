@@ -1,0 +1,14 @@
+{
+  "name": "Saint Local Designer",
+  "id": "saint-local-designer",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"],
+    "devAllowedDomains": ["ws://localhost:8765"],
+    "reasoning": "Talks only to designer.py running on this Mac."
+  }
+}

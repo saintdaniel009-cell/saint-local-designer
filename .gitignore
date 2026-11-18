@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.DS_Store
+dataset/runs/*
+!dataset/runs/.keep
+dataset/approved/*
+!dataset/approved/.keep
+dataset/train/*
+!dataset/train/.keep
+adapters/

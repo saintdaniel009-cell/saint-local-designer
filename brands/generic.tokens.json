@@ -1,0 +1,8 @@
+{
+  "frame": { "w": 390, "h": 844 },
+  "fonts": { "display": "Inter", "ui": "Inter" },
+  "colors": {
+    "brand": "#2F5BEA", "ink": "#111318", "muted": "#5B6070", "line": "#E7E9EE",
+    "surface": "#F5F6F8", "white": "#FFFFFF", "success": "#1F8F4E", "danger": "#D93A3A"
+  }
+}

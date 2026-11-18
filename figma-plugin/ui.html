@@ -1,0 +1,32 @@
+<style>
+  body { font: 12px/1.4 Inter, system-ui, sans-serif; margin: 12px; color: #3D145A; }
+  #dot { display: inline-block; width: 8px; height: 8px; border-radius: 4px; background: #C294EC; margin-right: 6px; }
+  #dot.on { background: #1D5B31; }
+  #log { color: #6B3396; margin-top: 6px; }
+</style>
+<div><span id="dot"></span><b id="s">Waiting for designer.py…</b></div>
+<div id="log">Keep this open while you design.</div>
+<script>
+  let ws;
+  const set = (t, on) => { document.getElementById('s').textContent = t; document.getElementById('dot').className = on ? 'on' : ''; };
+  const log = (t) => { document.getElementById('log').textContent = t; };
+  function connect() {
+    ws = new WebSocket('ws://localhost:8765');
+    ws.onopen = () => set('Connected to designer.py', true);
+    ws.onclose = () => { set('Waiting for designer.py…', false); setTimeout(connect, 1500); };
+    ws.onerror = () => {};
+    ws.onmessage = (e) => {
+      const m = JSON.parse(e.data);
+      log('Running: ' + m.cmd);
+      parent.postMessage({ pluginMessage: m }, '*');
+    };
+  }
+  onmessage = (e) => {
+    const m = e.data.pluginMessage;
+    if (!m) return;
+    if (m.status) { log(m.status); return; }
+    if (ws && ws.readyState === 1) ws.send(JSON.stringify(m));
+    log(m.ok ? 'Done.' : 'Error: ' + m.error);
+  };
+  connect();
+</script>

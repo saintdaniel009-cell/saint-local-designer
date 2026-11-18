@@ -1,0 +1,14 @@
+{
+  "model": "gemma4:12b",
+  "ollama_url": "http://localhost:11434",
+  "num_ctx": 16384,
+  "temperature": 0.4,
+  "think": false,
+  "port": 8765,
+  "default_brand": "universal-app",
+  "review_passes": 0,
+  "max_examples": 2,
+  "example_chars": 18000,
+  "num_predict": 7000,
+  "repeat_penalty": 1.08
+}

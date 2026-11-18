@@ -1,0 +1,27 @@
+{
+  "frame": {
+    "w": 390,
+    "h": 844
+  },
+  "fonts": {
+    "display": "Inter",
+    "ui": "Inter"
+  },
+  "tracking": -2,
+  "colors": {
+    "bg": "#FFFFFF",
+    "surface": "#F6F6F6",
+    "surface-2": "#EDEDED",
+    "text": "#111111",
+    "muted": "#6B6B6B",
+    "border": "#E6E6E6",
+    "primary": "#111111",
+    "on-primary": "#FFFFFF",
+    "soft": "#EFEFEF",
+    "success": "#1F8F4E",
+    "warning": "#B7791F",
+    "danger": "#D92D20",
+    "white": "#FFFFFF",
+    "ink": "#111111"
+  }
+}
